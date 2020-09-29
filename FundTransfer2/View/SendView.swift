@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SendView: View {
+    @State var amount: String = "30"
     var body: some View {
         VStack(spacing: 0) {
             Text("I want to fund transfer")
@@ -17,7 +18,7 @@ struct SendView: View {
             HStack {
                 Text("$")
                     
-                TextField("", text: .constant("30"))
+                TextField("", text: $amount)
                     .frame(width: 80)
             }
             .font(.system(size: 34, weight: .bold, design: .rounded))
